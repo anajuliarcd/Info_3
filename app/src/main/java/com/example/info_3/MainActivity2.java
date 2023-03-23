@@ -6,23 +6,30 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-    Button buttonvoltar;
+    private EditText textNumber1;
+    private EditText textNumber2;
+    Button buttonSomar;
+    double valor1;
+    double valor2 ;
 
-    @Override
+     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
-        Button buttonvoltar;
-        buttonvoltar=findViewById(R.id.buttonvoltar);
-        buttonvoltar.setOnClickListener(new View.OnClickListener() {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_main2);
+         textNumber1 = findViewById(R.id.TextNumber1);
+         textNumber2 = findViewById(R.id.TextNumber2);
+         buttonSomar= findViewById(R.id.buttonSomar);
+         buttonSomar.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(MainActivity2.this, MainActivity.class);
-                startActivity(in);
-            }
-        });
-    }
+             @Override
+             public void onClick(View view) {
+                 Intent in = new Intent (MainActivity2.this, MainActivity21.class);
+                 startActivity(in);
+             }
+         });
+     }
 }

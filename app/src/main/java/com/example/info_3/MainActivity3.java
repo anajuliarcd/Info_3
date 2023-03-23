@@ -8,21 +8,32 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity3 extends AppCompatActivity {
-    Button buttonvoltar2;
+    public class Jogador{
+        private String nome;
+        private int pontos;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-        buttonvoltar2=findViewById(R.id.buttonvoltar2);
-        buttonvoltar2.setOnClickListener(new View.OnClickListener() {
+        public Jogador(String nomeJogador){
 
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(MainActivity3.this, MainActivity.class);
-                startActivity(in);
-            }
-        });
+            nome = (nomeJogador.equals("")? "Jogador sem nome...coitado! ": nomeJogador );
+            pontos = 0;
+        }
+        public String obterNome(){
+
+            return nome;
+        }
+        public int obterPontos(){
+
+            return pontos;
+        }
+        public void incrementarPontos(){
+
+            pontos += 5;
+        }
+        public void decrementarPontos(){
+
+            pontos--;
+        }
 
     }
+
 }
